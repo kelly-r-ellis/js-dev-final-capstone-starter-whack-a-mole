@@ -176,12 +176,14 @@ The purpose of this function is to show and hide the mole given a delay time and
 ```js
 function showAndHide(hole, delay){
   // TODO: Call the toggleVisibility() function so that it adds the show class.
+  toggleVisibility(hole); 
   
   const timeoutID = setTimeout(() => {
     // TODO: Call the toggleVisibility() function so that it removes the show class when the timer times out.
+    toggleVisibility(hole); 
     
     gameOver();
-  }, 0); // TODO: Change the setTimeout() delay to the one provided as a parameter
+  }, delay); // TODO: Change the setTimeout() delay to the one provided as a parameter
   return timeoutID;
 }
 ```
