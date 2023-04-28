@@ -40,18 +40,21 @@ function randomInteger(min, max) {
  *
  */
 function setDelay(difficulty) {
+  let myTimeout
   // if the difficulty is easy, time delay is 1500 milliseconds
   if (difficulty === "easy") {
-    setTimeout(1500); 
+    myTimeout = 1500;
   }
   // if the difficulty is normal, time delay is 1000
   if (difficulty === "normal") {
-    setTimeout(1000); 
+    myTimeout = 1000; 
   }
   // if the difficulty is hard, it should return a randomInteger between 600 and 1200
   if (difficulty === "hard") {
-    setTimeout(randomInteger); 
+    myTimeout = randomInteger(600, 1200); 
   }
+  setTimeout(()=> {console.log("set timeout test")}, myTimeout); 
+  return myTimeout;
 }
 
 /**
@@ -69,8 +72,18 @@ function setDelay(difficulty) {
  * chooseHole(holes) //> returns one of the 9 holes that you defined
  */
 function chooseHole(holes) {
-  // TODO: Write your code here.
-
+  // 1. Generate a random integer from 0 to 8 and assign it to an index variable.
+  let index = randomInteger(0,8); 
+  // 2. Get a random hole with the random index (e.g., const hole = holes[index]).
+  const hole = holes[index]; 
+  // 3. if hole === lastHole, then call chooseHole(holes) again because you don't want to return the same hole.
+  if (hole === lastHole) {
+    chooseHole(holes); 
+  }; 
+  // 4. if hole is not the same as the lastHole, then keep track of it (lastHole = hole) and return the hole.
+  if (hole != lastHole) {
+    return hole; 
+  }
 }
 
 /**
@@ -140,7 +153,7 @@ function showAndHide(hole, delay){
 */
 function toggleVisibility(hole){
   // TODO: add hole.classList.toggle so that it adds or removes the 'show' class.
-  
+  hole.classList.toggle("show"); 
   return hole;
 }
 
