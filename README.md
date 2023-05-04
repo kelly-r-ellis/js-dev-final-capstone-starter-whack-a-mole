@@ -252,7 +252,7 @@ This function increments the `points` global variable and updates the scoreboard
 
 ```js
 function updateScore() {
-  // Increment the points global variable by 1 point
+  // Increment the points global variable by 1 pointx
   // Update score.textContent with points.
   // Return points;
 }
