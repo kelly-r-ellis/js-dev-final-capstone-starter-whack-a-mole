@@ -243,8 +243,7 @@ function whack(event) {
 * for an example on how to set event listeners using a for loop.
 */
 function setEventListeners(){
-  // TODO: Write your code here
-
+  moles.forEach(mole => mole.addEventListener('click', whack));
   return moles;
 }
 
@@ -280,6 +279,8 @@ function stopGame(){
 function startGame(){
   setDuration(10);
   showUp();
+  startTimer(); 
+  setEventListeners(); 
   return "game started";
 }
 
