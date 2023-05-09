@@ -8,11 +8,11 @@ const timerDisplay = document.querySelector('#timer'); // use querySelector() to
 const audioHit = new Audio("https://github.com/gabrielsanchez/erddiagram/blob/main/hit.mp3?raw=true");
 const song = new Audio("https://github.com/gabrielsanchez/erddiagram/blob/main/molesong.mp3?raw=true");
 
-let time = 0;
+let time = 10;
 let timer;
 let lastHole = 0;
 let points = 0;
-let difficulty = "easy";
+let difficulty = "normal";
 
 function playAudio(audioObject) {
   audioObject.play();

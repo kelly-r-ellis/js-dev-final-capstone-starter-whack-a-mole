@@ -2,12 +2,12 @@
 <html>
   <head>
     <title>Whack-a-Mole</title>
-    <meta name="viewport" content="width=device-width", initial-scale="1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./src/styles.css">
   </head>
   <body>
-    <h1 id="title">Whack-a-Mole!</h1>
-    <div>
+    <h1 id="title">Whack-a-Carrot!</h1>
+    <div class="controls">
       <div>
         <h2>Click <button id="start">start</button> to play!</h2>
       </div>
@@ -15,7 +15,7 @@
         <h2>score: <span id="score">0</span></h2>
       </div>
       <div>
-          <h2><span id="timer">0</span> seconds left.</h2>
+          <h2><span id="timer">10</span> seconds left.</h2>
       </div>
     </div>
     <div class="grid">
@@ -47,7 +47,8 @@
         <div id="mole8" class="mole"></div>
       </div>
     </div>
-    <button class="audio" onclick="play();">play song</button>
+
+    <button class="audio" onclick="play();">play music</button>
     <script src="./src/index.js"></script>
   </body>
 </html>
