@@ -252,7 +252,6 @@ function startTimer() {
 *
 */
 function whack(event) { 
-  event.preventDefault(); 
   updateScore()
 
   return points;
@@ -263,6 +262,9 @@ function whack(event) {
 * Adds the 'click' event listeners to the moles. See the instructions
 * for an example on how to set event listeners using a for loop.
 */
+
+// this function adds a click event listener to each mole that updates the score when a mole is clicked
+// this function also adds audio for when a mole is clicked 
 function setEventListeners(){
   moles.forEach(mole => mole.addEventListener('click', whack));
 
