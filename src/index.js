@@ -8,11 +8,11 @@ const timerDisplay = document.querySelector('#timer'); // use querySelector() to
 const audioHit = new Audio("https://github.com/gabrielsanchez/erddiagram/blob/main/hit.mp3?raw=true");
 const song = new Audio("https://github.com/gabrielsanchez/erddiagram/blob/main/molesong.mp3?raw=true");
 
-let time = 10;
+let time = 15;
 let timer;
 let lastHole = 0;
 let points = 0;
-let difficulty = "normal";
+let difficulty = "easy";
 
 function playAudio(audioObject) {
   audioObject.play();
@@ -251,7 +251,8 @@ function startTimer() {
 * the moles.
 *
 */
-function whack(event) {
+function whack(event) { 
+  event.preventDefault(); 
   updateScore()
 
   return points;
@@ -300,7 +301,7 @@ function stopGame(){
 *
 */
 function startGame(){
-  setDuration(10);
+  setDuration(15);
   showUp();
   startTimer(); 
   setEventListeners();
